@@ -1,10 +1,10 @@
-//https://chatgpt.com/share/f5f55932-26fe-4666-a454-a3aac077a659
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 require('dotenv/config');
+const path = require('path'); // Importing path module
 const authJwt = require('./middlewares/jwt');
 const errorHandler = require('./middlewares/error_handler');
 
@@ -26,10 +26,8 @@ const adminRouter = require('./routes/admin');
 app.use(`${API}/`, authRouter);
 app.use(`${API}/users`, usersRouter);
 app.use(`${API}/admin`, adminRouter);
+app.use('/public', express.static(path.join(__dirname, 'public'))); // Using path.join with __dirname
 
-
-// Start the server
-// localhost >> 192.168.0.0
 const hostname = env.HOST;
 const port = env.PORT;
 
