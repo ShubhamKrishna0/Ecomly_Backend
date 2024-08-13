@@ -19,7 +19,6 @@ exports.sendMail = async (email, subject, body) => {
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.error('Error sending email:', error);
-        
         reject(Error('Error sending email'));
       }
       console.log('Email sent:', info.response);
