@@ -108,7 +108,6 @@ exports.verifyToken = async function (req, res) {
     return res.status(500).json({ type: error.name, message: error.message });
   }
 };
-
 exports.forgotPassword = async function (req, res) {
   try {
     const { email } = req.body;
@@ -139,7 +138,6 @@ exports.forgotPassword = async function (req, res) {
     return res.status(500).json({ type: error.name, message: error.message });
   }
 };
-
 exports.verifyPasswordResetOTP = async function (req, res) {
   try {
     const { email, otp } = req.body;
@@ -165,7 +163,6 @@ exports.verifyPasswordResetOTP = async function (req, res) {
     return res.status(500).json({ type: error.name, message: error.message });
   }
 };
-
 exports.resetPassword = async function (req, res) {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
