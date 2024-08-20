@@ -1,0 +1,1969 @@
+{
+	"info": {
+		"_postman_id": "d6a265ce-0984-4b4c-8f90-94d5c45b84c4",
+		"name": "Ecomly",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28859113"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Get Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products?page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Sample Response\n\n``` json\n[\n    {\n        \"_id\": \"65511c26d3c061aff1b9ac6f\",\n        \"name\": \"Cantu Conditioner\",\n        \"description\": \"Cantu curling conditioner contains no silica or laxatives.\",\n        \"price\": 25.99,\n        \"rating\": 4.9,\n        \"colors\": [],\n        \"image\": \"http://localhost:3000/public/uploads/sunflower-1699814437747.png\",\n        \"category\": \"65510d02cb038be1903ccd4c\",\n        \"countInStock\": 215,\n        \"dateAdded\": \"2023-11-12T18:40:38.089Z\",\n        \"__v\": 28,\n        \"numberOfReviews\": 23,\n        \"id\": \"65511c26d3c061aff1b9ac6f\"\n    },\n    {\n        \"_id\": \"65511ce967b3d42a2562c0f9\",\n        \"name\": \"Cantu Conditioner\",\n        \"description\": \"Cantu curling conditioner contains no silica or laxatives.\",\n        \"price\": 25.99,\n        \"rating\": 0,\n        \"colors\": [],\n        \"image\": \"http://localhost:3000/public/uploads/sunflower-1699814626771.png\",\n        \"category\": \"65510d02cb038be1903ccd4c\",\n        \"countInStock\": 255,\n        \"dateAdded\": \"2023-11-12T18:43:53.182Z\",\n        \"__v\": 0,\n        \"numberOfReviews\": 0,\n        \"id\": \"65511ce967b3d42a2562c0f9\"\n    },\n]\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65511d2c541007d717f63d4b"
+								}
+							]
+						},
+						"description": "Sample Response\n\n``` json\n{\n    \"_id\": \"65511d2c541007d717f63d4b\",\n    \"name\": \"Cantu Smoothening Curling Conditioner\",\n    \"description\": \"Cantu curling conditioner contains no silica or laxatives.\",\n    \"price\": 25.99,\n    \"rating\": 0,\n    \"colors\": [],\n    \"image\": \"http://localhost:3000/public/uploads/sunflower-1699814700397.png\",\n    \"images\": [\n        \"http://localhost:3000/public/uploads/meme_head-1699814700397.jpeg\",\n        \"http://localhost:3000/public/uploads/ic_task_completed-1699814700401.png\",\n        \"http://localhost:3000/public/uploads/fountain-1699814700401.png\",\n        \"http://localhost:3000/public/uploads/fence-1699814700402.png\"\n    ],\n    \"sizes\": [],\n    \"category\": \"65510d02cb038be1903ccd4c\",\n    \"countInStock\": 245,\n    \"dateAdded\": \"2023-11-12T18:45:00.701Z\",\n    \"__v\": 1,\n    \"numberOfReviews\": 0,\n    \"id\": \"65511d2c541007d717f63d4b\"\n}\n\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products?category=65510d02cb038be1903ccd4c&page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "65510d02cb038be1903ccd4c"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Sample Response\n\n``` json\n[\n    {\n        \"_id\": \"65511c26d3c061aff1b9ac6f\",\n        \"name\": \"Cantu Conditioner\",\n        \"description\": \"Cantu curling conditioner contains no silica or laxatives.\",\n        \"price\": 25.99,\n        \"rating\": 4.9,\n        \"colors\": [],\n        \"image\": \"http://localhost:3000/public/uploads/sunflower-1699814437747.png\",\n        \"category\": \"65510d02cb038be1903ccd4c\",\n        \"countInStock\": 215,\n        \"dateAdded\": \"2023-11-12T18:40:38.089Z\",\n        \"__v\": 28,\n        \"numberOfReviews\": 23,\n        \"id\": \"65511c26d3c061aff1b9ac6f\"\n    },\n]\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get New Arrivals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products?criteria=newArrivals&page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "criteria",
+									"value": "newArrivals"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Sample Response\n\n``` json\n[\n    {\n        \"_id\": \"65511c26d3c061aff1b9ac6f\",\n        \"name\": \"Cantu Conditioner\",\n        \"description\": \"Cantu curling conditioner contains no silica or laxatives.\",\n        \"price\": 25.99,\n        \"rating\": 4.9,\n        \"colors\": [],\n        \"image\": \"http://localhost:3000/public/uploads/sunflower-1699814437747.png\",\n        \"category\": \"65510d02cb038be1903ccd4c\",\n        \"countInStock\": 215,\n        \"dateAdded\": \"2023-11-12T18:40:38.089Z\",\n        \"__v\": 28,\n        \"numberOfReviews\": 23,\n        \"id\": \"65511c26d3c061aff1b9ac6f\"\n    }\n]\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Popular",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products?criteria=popular&page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "criteria",
+									"value": "popular"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Sample Response\n\n``` json\n[\n    {\n        \"_id\": \"65511c26d3c061aff1b9ac6f\",\n        \"name\": \"Cantu Conditioner\",\n        \"description\": \"Cantu curling conditioner contains no silica or laxatives.\",\n        \"price\": 25.99,\n        \"rating\": 4.9,\n        \"colors\": [],\n        \"image\": \"http://localhost:3000/public/uploads/sunflower-1699814437747.png\",\n        \"category\": \"65510d02cb038be1903ccd4c\",\n        \"countInStock\": 215,\n        \"dateAdded\": \"2023-11-12T18:40:38.089Z\",\n        \"__v\": 28,\n        \"numberOfReviews\": 23,\n        \"id\": \"65511c26d3c061aff1b9ac6f\"\n    }\n]\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Search All Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/search?q=leave in&page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "leave in"
+								},
+								{
+									"key": "genderAgeCategory",
+									"value": "men",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Sample Response\n\n``` json\n[\n    {\n        \"_id\": \"65548fc2284eb931d91f6657\",\n        \"name\": \"Cantu Leave-in Conditioner\",\n        \"description\": \"Cantu curling conditioner contains no silica or laxatives.\",\n        \"price\": 25.99,\n        \"rating\": 0,\n        \"colors\": [],\n        \"image\": \"http://localhost:3000/public/uploads/sunflower-1700040642278.png\",\n        \"images\": [\n            \"http://localhost:3000/public/uploads/meme_head-1700040642278.jpeg\",\n            \"http://localhost:3000/public/uploads/ic_task_completed-1700040642278.png\",\n            \"http://localhost:3000/public/uploads/fountain-1700040642278.png\",\n            \"http://localhost:3000/public/uploads/fence-1700040642279.png\"\n        ],\n        \"reviews\": [],\n        \"sizes\": [],\n        \"category\": \"65510cf6cb038be1903ccd46\",\n        \"countInStock\": 30,\n        \"dateAdded\": \"2023-11-15T09:30:42.574Z\",\n        \"__v\": 0,\n        \"numberOfReviews\": 0,\n        \"id\": \"65548fc2284eb931d91f6657\"\n    }\n]\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/search?q=leave in&category=65510cf6cb038be1903ccd46&page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "leave in"
+								},
+								{
+									"key": "category",
+									"value": "65510cf6cb038be1903ccd46"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Sample Response\n\n``` json\n[\n    {\n        \"_id\": \"65548fc2284eb931d91f6657\",\n        \"name\": \"Cantu Leave-in Conditioner\",\n        \"description\": \"Cantu curling conditioner contains no silica or laxatives.\",\n        \"price\": 25.99,\n        \"rating\": 0,\n        \"colors\": [],\n        \"image\": \"http://localhost:3000/public/uploads/sunflower-1700040642278.png\",\n        \"images\": [\n            \"http://localhost:3000/public/uploads/meme_head-1700040642278.jpeg\",\n            \"http://localhost:3000/public/uploads/ic_task_completed-1700040642278.png\",\n            \"http://localhost:3000/public/uploads/fountain-1700040642278.png\",\n            \"http://localhost:3000/public/uploads/fence-1700040642279.png\"\n        ],\n        \"reviews\": [],\n        \"sizes\": [],\n        \"category\": \"65510cf6cb038be1903ccd46\",\n        \"countInStock\": 30,\n        \"dateAdded\": \"2023-11-15T09:30:42.574Z\",\n        \"__v\": 0,\n        \"numberOfReviews\": 0,\n        \"id\": \"65548fc2284eb931d91f6657\"\n    }\n]\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Category and GenderAgeCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/search?q=conditioner&category=65510cf6cb038be1903ccd46&genderAgeCategory=Kids&page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "conditioner"
+								},
+								{
+									"key": "category",
+									"value": "65510cf6cb038be1903ccd46"
+								},
+								{
+									"key": "genderAgeCategory",
+									"value": "Kids"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Sample Response\n\n``` json\n[\n    {\n        \"_id\": \"655494ec54e02053a76ae8b9\",\n        \"name\": \"Cantu Kids Conditioner\",\n        \"description\": \"Cantu curling conditioner contains no silica or laxatives.\",\n        \"price\": 25.99,\n        \"rating\": 0,\n        \"colors\": [],\n        \"image\": \"http://localhost:3000/public/uploads/sunflower-1700041964119.png\",\n        \"images\": [\n            \"http://localhost:3000/public/uploads/meme_head-1700041964120.jpeg\",\n            \"http://localhost:3000/public/uploads/ic_task_completed-1700041964121.png\",\n            \"http://localhost:3000/public/uploads/fountain-1700041964121.png\",\n            \"http://localhost:3000/public/uploads/fence-1700041964125.png\"\n        ],\n        \"reviews\": [],\n        \"sizes\": [],\n        \"category\": \"65510cf6cb038be1903ccd46\",\n        \"genderAgeCategory\": \"kids\",\n        \"countInStock\": 30,\n        \"dateAdded\": \"2023-11-15T09:52:44.372Z\",\n        \"__v\": 0,\n        \"numberOfReviews\": 0,\n        \"id\": \"655494ec54e02053a76ae8b9\"\n    }\n]\n\n ```"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "Get Categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						},
+						"description": "Sample Response\n\n``` json\n[\n    {\n        \"_id\": \"65510cf5cb038be1903ccd43\",\n        \"name\": \"Conditioner\",\n        \"colour\": \"#FFFFFF\",\n        \"markedForDeletion\": false,\n        \"icon\": \"cream\",\n        \"__v\": 0,\n        \"id\": \"65510cf5cb038be1903ccd43\"\n    },\n    {\n        \"_id\": \"65510cf6cb038be1903ccd46\",\n        \"name\": \"Conditioner\",\n        \"colour\": \"#FFFFFF\",\n        \"markedForDeletion\": false,\n        \"icon\": \"cream\",\n        \"__v\": 0,\n        \"id\": \"65510cf6cb038be1903ccd46\"\n    },\n]\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categories/653ac595a2f14a9c447d7185",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories",
+								"653ac595a2f14a9c447d7185"
+							]
+						},
+						"description": "Sample Response\n\n``` json\n {\n        \"_id\": \"65510d02cb038be1903ccd4c\",\n        \"name\": \"Conditioner\",\n        \"colour\": \"#FFFFFF\",\n        \"markedForDeletion\": true,\n        \"icon\": \"cream\",\n        \"__v\": 0,\n        \"id\": \"65510d02cb038be1903ccd4c\"\n}\n\n ```"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Add Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orderItems\": [\n        {\n            \"quantity\": 8,\n            \"product\": \"65511c26d3c061aff1b9ac6f\",\n            \"cartProductId\": \"65511c26d3c061aff1b9ac6f\",\n            \"productPrice\": 49.99,\n            \"productName\": \"Breathable T-shirt\",\n            \"productImage\": \"http://localhost:8080/image.png\",\n            \"selectedSize\": null,\n            \"selectedColour\": null\n        },\n        {\n            \"quantity\": 2,\n            \"product\": \"65511d2c541007d717f63d4b\",\n            \"cartProductId\": \"65511c26d3c061aff1b9ac6f\",\n            \"productPrice\": 49.99,\n            \"productName\": \"Breathable T-shirt\",\n            \"productImage\": \"http://localhost:8080/image.png\",\n            \"selectedSize\": \"XL\",\n            \"selectedColour\": \"#000000\"\n        }\n    ],\n    \"shippingAddress1\": \"Flowers Street 442\",\n    \"city\": \"Praque\",\n    \"postalCode\": \"000000\",\n    \"country\": \"Czech Republic\",\n    \"totalPrice\": 300,\n    \"phone\": \"+1234567890\",\n    \"user\": \"655716828bec5bc02e8d0421\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/orders/65512cf52d737a6d684db4d1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"65512cf52d737a6d684db4d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/orders/user/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "655716828bec5bc02e8d0421"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "products",
+					"item": [
+						{
+							"name": "Add Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mizzen+Main EasyKnit Tee - Ultra-Soft Short-Sleeve Men's T-Shirt - Moisture-Wicking and Quick Dry Tee, Regular Fit",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "6581ca04a538d030fe8692eb",
+											"type": "text"
+										},
+										{
+											"key": "countInStock",
+											"value": "50",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Introducing the Mizzen+Main Men's EasyKnit Tee - The Ultimate Men's Shirt for Unmatched Comfort and Versatility. Are you tired of settling for ordinary men's shirts that sacrifice comfort for style? Our Mizzen+Main EasyKnit Tee is here to revolutionize your wardrobe and elevate your everyday style to new heights. Crafted with precision and designed for the modern man, this men's tee is a game-changer. The regular fit ensures a flexible and comfortable feel throughout the body, giving you the freedom to move with ease. Say goodbye to restrictive and uncomfortable shirts - our EasyKnit Tee is made true to size for the perfect fit. Made from ultra-soft and lightweight fabric, it's easy to wear, easy to layer, and easy to clean. With its superior comfort and luxurious feel, this tee is about to be the most versatile shirt in your closet. Our short-sleeve tee was created to elevate a style that has become an everyday staple. Softer, stretchier, and more comfortable than any other t-shirt out there, this style is just as ready to hit the town as it is to stay home and lay low. From casual outings to formal events, this tee will always have you looking sharp. No more ironing or dry cleaning, simply machine wash it cold, inside out for best results, and hang dry. Save time and money with our low-maintenance t-shirt. With its 50% polyester and 50% modal fabric content, this men's t-shirt is the epitome of comfort and style. Whether you're hitting the gym, going for a game of tennis, or simply lounging at home, this men's golf shirts are your go-to choice. Its versatility and timeless design make it a perfect gift for men who appreciate quality and style. It's time to say goodbye to dull and uncomfortable shirts and hello to a world of fashion and comfort. Because we believe that out of comfort comes confidence. And out of confidence comes a new way to walk into work, the weekend & anywhere in between.",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "59.99",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/akundadababalei/Pictures/product_images/t-shirts/8.png"
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": "/home/akundadababalei/Documents/website_idea.txt",
+											"disabled": true
+										},
+										{
+											"key": "genderAgeCategory",
+											"value": "men",
+											"type": "text"
+										},
+										{
+											"key": "colours[0]",
+											"value": "#000000",
+											"type": "text"
+										},
+										{
+											"key": "colours[1]",
+											"value": "#FF1493",
+											"type": "text"
+										},
+										{
+											"key": "colours[2]",
+											"value": "#FFFFFF",
+											"type": "text"
+										},
+										{
+											"key": "sizes[0]",
+											"value": "S",
+											"type": "text"
+										},
+										{
+											"key": "sizes[1]",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "sizes[2]",
+											"value": "L",
+											"type": "text"
+										},
+										{
+											"key": "sizes[3]",
+											"value": "XL",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin/products/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/admin/products/6581c683a538d030fe8692b9",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"products",
+										"6581c683a538d030fe8692b9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Cantu Smoothening Curling Conditioner",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": [
+												"/home/akundadababalei/Pictures/bird_house.png",
+												"/home/akundadababalei/Pictures/android_logo.png"
+											],
+											"disabled": true
+										},
+										{
+											"key": "countInStock",
+											"value": "50",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin/products/65511c26d3c061aff1b9ac6f",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"products",
+										"65511c26d3c061aff1b9ac6f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product Images",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deletedImageURLs\": [\n        \"http://localhost:3000/public/uploads/bird_house-1699815647704.png\",\n        \"http://localhost:3000/public/uploads/android_logo-1699815647705.png\",\n        \"http://localhost:3000/public/uploads/bird_house-1699815702594.png\",\n        \"http://localhost:3000/public/uploads/android_logo-1699815702595.png\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin/products/65511d2c541007d717f63d4b/images",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"products",
+										"65511d2c541007d717f63d4b",
+										"images"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Products Count",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/admin/products/count",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"products",
+										"count"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "categories",
+					"item": [
+						{
+							"name": "Add Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "T-shirts",
+											"type": "text"
+										},
+										{
+											"key": "colour",
+											"value": "#66CDAA",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/akundadababalei/Pictures/category_images/t_shirt.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/admin/categories/6581bb84496da90ceebed31d",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"categories",
+										"6581bb84496da90ceebed31d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Cream\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin/categories/65510cf7cb038be1903ccd49",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"categories",
+										"65510cf7cb038be1903ccd49"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "orders",
+					"item": [
+						{
+							"name": "Update Order Status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"cancelled\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin/orders/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"orders",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65a7e61f0ee97c1d8b94a5f0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/admin/orders/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"orders",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6553901fc54e14df1fa68426"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Orders",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "statusCategory",
+											"value": "cancelled",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Total Sales",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/orders/total-sales/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"total-sales",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/admin/users/655715918bec5bc02e8d040d",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								"655715918bec5bc02e8d040d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Client Maxric\",\n    \"email\":\"clienttest@maxric.com\",\n    \"password\":\"12345#Aa\",\n    \"phone\": \"+2348068765765\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"register"
+							]
+						},
+						"description": "Sample Response\n\n``` json\n{\n    \"name\": \"Client Test\",\n    \"email\": \"clienttest@maxric.com\",\n    \"phone\": \"+2348068765765\",\n    \"cart\": [],\n    \"isAdmin\": false,\n    \"_id\": \"655716828bec5bc02e8d0421\",\n    \"wishlist\": [],\n    \"__v\": 0,\n    \"id\": \"655716828bec5bc02e8d0421\"\n}\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"clienttest@maxric.com\",\"password\":\"12345#Aa\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "Sample Response\n\n``` json\n{\n    \"_id\": \"655716828bec5bc02e8d0421\",\n    \"name\": \"Client Test\",\n    \"email\": \"clienttest@maxric.com\",\n    \"phone\": \"+2348068765765\",\n    \"isAdmin\": false,\n    \"wishlist\": [],\n    \"__v\": 0,\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTcxNjgyOGJlYzViYzAyZThkMDQyMSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MDAyMDY4NTEsImV4cCI6MTcwMDI5MzI1MX0.KBWVqJiKZ3SpSKBSq25lQrNy2Lr57_e6kM6Wyz6OnmI\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTcxNjgyOGJlYzViYzAyZThkMDQyMSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MDAyMDY4NTEsImV4cCI6MTcwNTM5MDg1MX0.i_LXfWcGVX1qyOo2FExVlLkPh5OohENdg2-AjuhRmAA\"\n}\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"clienttest@maxric.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/forgot-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"forgot-password"
+							]
+						},
+						"description": "Sample Response\n\n``` json\n{\n    \"message\": \"Password reset OTP sent to your email\"\n}\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"clienttest@maxric.com\",\n    \"otp\": 7089\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/verify-otp/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"verify-otp",
+								""
+							]
+						},
+						"description": "Sample Response\n\n``` json\n{\n    \"message\": \"OTP confirmed successfully\"\n}\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"clienttest@maxric.com\",\n    \"newPassword\": \"12345#Aa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reset-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reset-password"
+							]
+						},
+						"description": "Sample Response\n\n``` json\n{\n    \"message\": \"Password reset successful\"\n}\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"apitest@nuclene.com\", \"password\": \"12345$Aa\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/verify-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"verify-token"
+							]
+						},
+						"description": "Sample Response\n\n``` json\ntrue\n\n ```"
+					},
+					"response": []
+				}
+			],
+			"description": "**User Authentification**\n\nAll pertaining to user authentification and authorization\n\n`/`"
+		},
+		{
+			"name": "wishlists",
+			"item": [
+				{
+					"name": "Get User Wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id/wishlist",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"wishlist"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65515d654e62b41d693b7fdf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add To Wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"65511c26d3c061aff1b9ac6f\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/:id/wishlist",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"wishlist"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "654edbafd3f68505232ad8a1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove From Wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id/wishlist/:productId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"wishlist",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65515d654e62b41d693b7fdf"
+								},
+								{
+									"key": "productId",
+									"value": "65511c26d3c061aff1b9ac6f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "Get User Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id/cart",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"cart"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65515d654e62b41d693b7fdf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Cart Count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id/cart/count",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"cart",
+								"count"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "655716828bec5bc02e8d0421"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add To Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"65511c26d3c061aff1b9ac6f\",\n    \"quantity\": 2,\n    \"selectedSize\": \"100ML\",\n    \"selectedColour\": \"#93823B\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/:id/cart",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"cart"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65515d654e62b41d693b7fdf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Product Quantity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"quantity\": 20 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/:id/cart/:cartProductId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"cart",
+								":cartProductId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65515d654e62b41d693b7fdf"
+								},
+								{
+									"key": "cartProductId",
+									"value": "655334e8a3de35262c6cfa25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:userId/cart/:cartProductId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"cart",
+								":cartProductId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								},
+								{
+									"key": "cartProductId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove From Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:userId/cart/:cartProductId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"cart",
+								":cartProductId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								},
+								{
+									"key": "cartProductId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "Leave Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"6581beb3496da90ceebed335\",\n    \"comment\": \"I love these shoes. They are very comfortable.\",\n    \"rating\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/:id/reviews",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								":id",
+								"reviews"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6581bd89496da90ceebed32a"
+								}
+							]
+						},
+						"description": "Sample Response\n\n``` json\n{\n    \"product\": {\n        \"_id\": \"65511d2c541007d717f63d4b\",\n        \"name\": \"Cantu Smoothening Curling Conditioner\",\n        \"description\": \"Cantu curling conditioner contains no silica or laxatives.\",\n        \"price\": 25.99,\n        \"rating\": 5,\n        \"colors\": [],\n        \"image\": \"http://localhost:3000/public/uploads/sunflower-1699814700397.png\",\n        \"images\": [\n            \"http://localhost:3000/public/uploads/meme_head-1699814700397.jpeg\",\n            \"http://localhost:3000/public/uploads/ic_task_completed-1699814700401.png\",\n            \"http://localhost:3000/public/uploads/fountain-1699814700401.png\",\n            \"http://localhost:3000/public/uploads/fence-1699814700402.png\"\n        ],\n        \"reviews\": [\n            {\n                \"_id\": \"656d06444ac72a6d449ff90d\",\n                \"user\": \"6561fd0c112d2c6c7eebd746\",\n                \"userName\": \"Mobile Test\",\n                \"comment\": \"Best Conditioner I've ever used, I can't leave a better comment than this.\\nPS: you actually could mix in a little water and it will still retain it's consistency. I cut mine in half, then put them in two separate containers, then filled them both up with water, stirred them till it was consistent again, and voila, I had two 200ml containers filled with conditioner. Best decision I've ever made.\",\n                \"rating\": 5,\n                \"date\": \"2023-12-03T22:50:44.641Z\",\n                \"__v\": 0\n            }\n        ],\n        \"sizes\": [],\n        \"category\": \"65510d02cb038be1903ccd4c\",\n        \"countInStock\": 245,\n        \"dateAdded\": \"2023-11-12T18:45:00.701Z\",\n        \"__v\": 2,\n        \"numberOfReviews\": 1,\n        \"id\": \"65511d2c541007d717f63d4b\"\n    },\n    \"review\": {\n        \"user\": \"6561fd0c112d2c6c7eebd746\",\n        \"userName\": \"Mobile Test\",\n        \"comment\": \"Best Conditioner I've ever used, I can't leave a better comment than this.\\nPS: you actually could mix in a little water and it will still retain it's consistency. I cut mine in half, then put them in two separate containers, then filled them both up with water, stirred them till it was consistent again, and voila, I had two 200ml containers filled with conditioner. Best decision I've ever made.\",\n        \"rating\": 5,\n        \"_id\": \"656d06444ac72a6d449ff90d\",\n        \"date\": \"2023-12-03T22:50:44.641Z\",\n        \"__v\": 0\n    }\n}\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Reviews",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/:id/reviews?page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								":id",
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6581bd89496da90ceebed32a"
+								}
+							]
+						},
+						"description": "Sample Response\n\n``` json\n[\n    {\n        \"_id\": \"656d06444ac72a6d449ff90d\",\n        \"user\": \"6561fd0c112d2c6c7eebd746\",\n        \"userName\": \"Mobile Test\",\n        \"comment\": \"Best Conditioner I've ever used, I can't leave a better comment than this.\\nPS: you actually could mix in a little water and it will still retain it's consistency. I cut mine in half, then put them in two separate containers, then filled them both up with water, stirred them till it was consistent again, and voila, I had two 200ml containers filled with conditioner. Best decision I've ever made.\",\n        \"rating\": 5,\n        \"date\": \"2023-12-03T22:50:44.641Z\",\n        \"__v\": 0\n    }\n]\n\n ```"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"yakoj80640@htoal.com\",\"password\":\"12345#Aa\", \"isAdmin\": true}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "655716828bec5bc02e8d0421"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id/paymentProfile?return_url=https://google.com",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"paymentProfile"
+							],
+							"query": [
+								{
+									"key": "return_url",
+									"value": "https://google.com"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Checkout",
+			"item": [
+				{
+					"name": "Generate Checkout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cartItems\": [\n        {\n            \"name\": \"Breathable T-Shirt\",\n            \"images\": [\"http://localhost:8080/image.png\"],\n            \"price\": 59.99,\n            \"product\": \"65511c26d3c061aff1b9ac6f\",\n            \"cartProductId\": \"65511c26d3c061aff1b9ac6f\",\n            \"quantity\": 2,\n            \"selectedSize\": \"45\",\n            \"selectedColour\": \"#ffffff\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/checkout/?theme=dark",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"checkout",
+								""
+							],
+							"query": [
+								{
+									"key": "theme",
+									"value": "dark"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "adminToken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NGVkYmFmZDNmNjg1MDUyMzJhZDhhMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5OTg2NzQ5NSwiZXhwIjoxNjk5OTUzODk1fQ.xld62AZ2hzCp3tvi9OP-ZAqL050gfzDm9fXdfDj0_Ws"
+		},
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000/api/v1"
+		}
+	]
+}
